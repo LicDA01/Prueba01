@@ -63,16 +63,16 @@
     const AS_URL_BASE = "https://script.google.com/macros/s/AKfycbz9bH96yfBkJBUyWhto26bNRprYM4Detio7H7b75RAFgsfwn97rC8WZXClzU8mlpXXw3g/exec";
 
     var url = document.location.herf;
-    var k = url.substr(url.lastIndexOf("k=")+2;
+    var k = url.substr(url.lastIndexOf("k=")+2);
 
     if(k){
       fetch(AS_URL_BASE+'?k='+k)
       .then(r => r.text())
       .then((r) => {
         console.log(r);
-        //document.location.replacer(r);
+        //document.write(r);
         if(r){
-          document.location.replacer(r);
+          document.location.replace(r);
         }
       })
       .catch(err => console.log(err))
@@ -84,5 +84,3 @@
   
 </body>
 <html>
-
-</html>
